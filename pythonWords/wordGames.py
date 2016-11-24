@@ -1,5 +1,13 @@
 import random
 
+def again():
+    request = input("Do you want to play again (y or n)? ")
+    if request == "y":
+        play_word_game()
+    elif request == "n":
+        print("See you later!")
+
+
 def get_random_word():
     words = ["pizza", "cheese", "apples"]
     word = words[random.randint(0, len(words)-1)]
@@ -55,11 +63,10 @@ def play_word_game():
 
     if strikes >= max_strikes:
         print("Loser!")
+        again()
     else:
         print("Winner!")
-
+        again()
 print("Game started")
 print("Guess the word!")
 play_word_game()
-print("Game over man!")
-print("Want to play again?")
